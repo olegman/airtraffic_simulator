@@ -4,6 +4,7 @@ class Airplane
     @title = 'Boing'
     @weight = 740
     @length = 200
+
   end	
 
   def aircraft_type
@@ -22,12 +23,8 @@ class Airplane
     @altitude
   end
 
-  def position_x
-    
-  end
-
-  def position_y
-    
+  def position(position_x = 0, position_y = 0)
+    @position = [position_x, position_y]
   end
 
   def course
@@ -38,6 +35,6 @@ class Airplane
     "title: " + @title + " weight: " + @weight.to_s + " length: " + @length.to_s
   end
 
-  attr_writer :aircraft_type, :weight, :speed, :altitude, :position_x, :position_y, :course   
+  attr_writer :aircraft_type, :weight, :speed, :altitude, :course   
   
 end
