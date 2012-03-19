@@ -1,10 +1,15 @@
 class Airplane
   
   def initialize
-    @title = 'Boing'
-    @weight = 740
+    @title = 'Boing'    
     @length = 200
 
+    @aircraft_type = 'airbus'
+    @weight = rand(501)
+    @speed = rand(701)
+    @altitude = rand(3001)    
+    @course = rand(361)
+    @position = [rand(100),rand(100)]
   end	
 
   def aircraft_type
@@ -23,7 +28,7 @@ class Airplane
     @altitude
   end
 
-  def position(position_x = 0, position_y = 0)
+  def position(position_x = @position[0], position_y = @position[1])
     @position = [position_x, position_y]
   end
 
