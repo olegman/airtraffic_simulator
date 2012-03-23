@@ -1,25 +1,38 @@
 class Airplane  
   
-  def initialize(options)
-    @title         = options[:title]
-    @length        = options[:length]
+  def initialize(options={})
+    @title         = options[:title]         || "Aeroflot"
+    @length        = options[:length]        || 700
     
-    @aircraft_type = options[:aircraft_type]
-    @weight        = options[:weight]
-    @speed         = options[:speed ]
-    @altitude      = options[:altitude]   
-    @course        = options[:course]
-    @position      = [ options[:position_x], options[:position_y] ]
+    @aircraft_type = options[:aircraft_type] || "Boing"
+    @weight        = options[:weight]        || 300
+    @speed         = options[:speed ]        || 600
+    @altitude      = options[:altitude]      || 2000   
+    @course        = options[:course]        || 50
+    @position      = if options[:position_x].nil? || options[:position_y].nil? 
+                        [ 0, 0 ]
+                     else
+                        [ options[:position_x], options[:position_y] ]  
+                     end  
   end	
 
-  def position(position_x = @position[0], position_y = @position[1])
+  def position=(position_x, position_y)
     @position = [position_x, position_y]
-  end
+  end  
 
   def info
-    "title: " + @title + " weight: " + @weight.to_s + " length: " + @length.to_s
+
+    if block_given? 
+      yield(@title)
+      yield(@length)
+      yield(@aircraft_type)
+    else
+      "String"      
+    end  
+
   end
 
-  attr_accessor :aircraft_type, :weight, :speed, :altitude, :course    
+  attr_reader :aircraft_type, :weight, :position 
+  attr_accessor :speed, :altitude, :course    
   
 end
