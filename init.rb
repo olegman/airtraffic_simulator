@@ -1,8 +1,9 @@
 require_relative "airplane"
+require_relative "runaway"
 # require_relative "big_airplane"
 
-item = Airplane.new({:title => "Aeroflot", :weight => 500, :length => 150})
-p item
+# item = Airplane.new({:title => "Aeroflot", :weight => 500, :length => 150})
+# p item
 # item = Airplane.new()
 # item.position=(10,20)
 # puts item.position
@@ -23,3 +24,7 @@ p item
 
 # item = Airplane.new({:title => "Aeroflot", :weight => 500, :length => 150})
 # puts item.info 
+
+
+# runaway = Runaway.new({:length => 400})
+# p runaway

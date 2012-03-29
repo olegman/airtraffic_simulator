@@ -1,4 +1,7 @@
 class Airplane  
+
+  attr_reader :aircraft_type, :weight, :position 
+  attr_accessor :speed, :altitude, :course 
   
   def initialize(options={})
     @title         = options[:title]         || "Aeroflot"
@@ -31,8 +34,5 @@ class Airplane
     end  
 
   end
-
-  attr_reader :aircraft_type, :weight, :position 
-  attr_accessor :speed, :altitude, :course    
   
 end
