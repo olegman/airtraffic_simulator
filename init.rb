@@ -30,8 +30,14 @@ runways = []
 
 runways.push Runaway.new({:length => 450})
 runways.push Runaway.new({:length => 500})
+runways.push Runaway.new({:airplane => true})
 
-domodedovo = Airport.new(runways)
+domodedovo = Airport.new(:runways => runways)
 
-puts domodedovo.runways
-# p runaway
+# p domodedovo.runways
+
+
+r = Runaway.new()
+r.receive_airplane
+r.depart_airplane
+p r
