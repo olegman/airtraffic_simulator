@@ -8,4 +8,8 @@ class Airport
     @runways = options[:runways] || []
   end
 
+  def free_runways    
+    @runways.each {|r| if r.airplane == false; yield(r); end }
+  end
+
 end

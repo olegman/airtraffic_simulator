@@ -28,16 +28,16 @@ require_relative "airport"
 
 runways = []
 
-runways.push Runaway.new({:length => 450})
-runways.push Runaway.new({:length => 500})
-runways.push Runaway.new({:airplane => true})
+runways.push r1 = Runaway.new({:length => 450})
+runways.push r2 = Runaway.new({:length => 500})
+runways.push r3 = Runaway.new({:airplane => true})
 
 domodedovo = Airport.new(:runways => runways)
 
-# p domodedovo.runways
+domodedovo.free_runways { |r| puts "Runway #{r} is free" }
 
 
-r = Runaway.new()
-r.receive_airplane
-r.depart_airplane
-p r
+# r = Runaway.new()
+# r.receive_airplane
+# r.depart_airplane
+# p r

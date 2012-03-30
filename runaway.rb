@@ -1,6 +1,6 @@
 class Runaway
 
-  attr_reader :length, :course, :surface_type, :position_x, :position_y, :altitude 
+  attr_reader :length, :course, :surface_type, :position_x, :position_y, :altitude, :airplane 
 
   def initialize(options={})
     @length       = options[:length]       || 650
