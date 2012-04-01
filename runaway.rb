@@ -13,17 +13,17 @@ class Runaway
     @airplane     = options[:airplane]     || false
   end
 
-  def receive_airplane
-    if @airplane == false
-      @airplane = true
+  def receive_airplane(airplane)
+    unless @airplane
+      @airplane = airplane
     else
       puts "can't receive airplane, must depart first"
     end
   end
 
   def depart_airplane
-    if @airplane == true
-      @airplane = false
+    if @airplane
+      @airplane = nil
     else
       puts "nothing to depart"
     end

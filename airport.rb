@@ -1,4 +1,5 @@
 class Airport
+  include AirplaneContainer
 
   attr_reader :name, :code, :runways
   
@@ -6,10 +7,11 @@ class Airport
     @name    = options[:name]    || "Domodedovo"  
     @code    = options[:code]    || 123
     @runways = options[:runways] || []
+    @airplanes = []
   end
 
   def free_runways    
-    @runways.each {|r| if r.airplane == false; yield(r); end }
+    @runways.each {|r| yield(r) unless r.airplane }
   end
 
 end
