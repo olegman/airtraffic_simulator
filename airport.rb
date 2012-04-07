@@ -5,10 +5,11 @@ class Airport
   attr_reader :name, :code, :runways
   
   def initialize(options={})
-    @name    = options[:name]    || "Domodedovo"  
-    @code    = options[:code]    || 123
-    @runways = options[:runways] || []
+    @name      = options[:name]    || "Domodedovo"  
+    @code      = options[:code]    || 123
+    @runways   = options[:runways] || []
     @airplanes = []
+    @limit     = 3
   end
 
   def free_runways    

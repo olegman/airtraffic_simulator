@@ -7,9 +7,14 @@ module AirplaneContainer
   module Manager
 
     attr_reader :airplanes
+    attr_accessor :limit
 
     def add_airplane(airplane)
-      @airplanes.push airplane
+      if @limit > @airplanes.size
+        @airplanes.push airplane
+      else
+        puts "You can't add more, because limit is: #{@limit}"
+      end
     end
 
     def delete_airplane(airplane)
@@ -20,16 +25,31 @@ module AirplaneContainer
   
   module Info
 
-    def airplanes_count      
+    def airplanes_count
+
       count = 0
       @airplanes.each do |a|
         if yield(a)
           count += 1
-        end  
+        end          
       end
       puts count
+
     end
 
-  end  
+    def big_airplanes_count
+
+      # Неопнятно как можно реюзнуть тут метод airplanes_count
+      # count = 0
+      # @airplanes.each do |a|
+      #   if yield(a) && a.class == BigAirplane
+      #     count += 1
+      #   end          
+      # end
+      # puts count
+
+    end
+
+  end      
 
 end

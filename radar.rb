@@ -3,6 +3,7 @@ class Radar
 
   def initialize
     @airplanes = []
+    @limit     = 3
   end
 
 end

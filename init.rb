@@ -65,7 +65,8 @@ require_relative "radar"
 a1 = Airplane.new({:title => "Boeing 777"})
 a2 = Airplane.new({:title => "Boeing 747"})
 a3 = Airplane.new({:title => "Boeing 777"})
-a4 = Airplane.new({:title => "Boeing 747"})
+a4 = BigAirplane.new({:title => "Boeing 747"})
+a5 = BigAirplane.new({:title => "Boeing 777"})
 
 airport = Airport.new()
 
@@ -73,10 +74,11 @@ airport.add_airplane(a1)
 airport.add_airplane(a2)
 airport.add_airplane(a3)
 airport.add_airplane(a4)
+airport.add_airplane(a5)
 
 # airport.airplanes.each { |a| puts a.title }
 
-airport.airplanes_count { |a| a.title == "Boeing 777"  }
+airport.big_airplanes_count { |a| a.title == "Boeing 777"  }
 
 
 
