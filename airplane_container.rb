@@ -20,6 +20,16 @@ module AirplaneContainer
   
   module Info
 
+    def airplanes_count      
+      count = 0
+      @airplanes.each do |a|
+        if yield(a)
+          count += 1
+        end  
+      end
+      puts count
+    end
+
   end  
 
 end

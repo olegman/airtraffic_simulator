@@ -1,6 +1,6 @@
 class Airplane  
 
-  attr_reader :aircraft_type, :weight, :position 
+  attr_reader :aircraft_type, :weight, :position, :title 
   attr_accessor :speed, :altitude, :course 
   
   def initialize(options={})

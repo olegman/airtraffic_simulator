@@ -48,17 +48,42 @@ require_relative "radar"
 # puts big_airplane.engines_count
 
 
-radar = Radar.new
-airplane1 = Airplane.new
-airplane2 = Airplane.new
-airplane3 = Airplane.new
-domodedovo = Airport.new
+
+# radar = Radar.new
+# airplane1 = Airplane.new
+# airplane2 = Airplane.new
+# airplane3 = Airplane.new
+# domodedovo = Airport.new
+
+# radar.add_airplane(airplane1)
+# radar.add_airplane(airplane2)
+# puts radar.airplanes.size
+# puts '-------------------------------'
+# radar.delete_airplane(airplane2)
+# puts radar.airplanes.size
+
+a1 = Airplane.new({:title => "Boeing 777"})
+a2 = Airplane.new({:title => "Boeing 747"})
+a3 = Airplane.new({:title => "Boeing 777"})
+a4 = Airplane.new({:title => "Boeing 747"})
+
+airport = Airport.new()
+
+airport.add_airplane(a1)
+airport.add_airplane(a2)
+airport.add_airplane(a3)
+airport.add_airplane(a4)
+
+# airport.airplanes.each { |a| puts a.title }
+
+airport.airplanes_count { |a| a.title == "Boeing 777"  }
 
 
-radar.add_airplane(airplane1)
-radar.add_airplane(airplane2)
-puts radar.airplanes.size
-puts '-------------------------------'
-radar.delete_airplane(airplane2)
-puts radar.airplanes.size
+
+
+
+
+
+
+
 
