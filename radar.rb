@@ -1,5 +1,5 @@
 class Radar
-  include AirplaneContainer
+  include AirplaneContainer::Manager
 
   def initialize
     @airplanes = []
